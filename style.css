@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(9, 22, 119);
+  font-family: "Courier New", Courier, monospace;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* color: white; */
+}
+
+.clock {
+  position: relative;
+  background-color: black;
+  border: white;
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  border-width: 10px;
+  border: 8px solid rgb(6, 104, 196);
+  /* box-shadow: ; */
+}
+
+img {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 75px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1;
+}
+
+.nums div {
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  color: goldenrod;
+}
+
+.twelve {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* default for translate ix X?? */
+}
+.three {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.six {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nine {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hands {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.hands::before {
+  content: ""; /*make to always set to empty*/
+  background-color: green;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.hands div {
+  background-color: goldenrod;
+  width: 8px;
+  position: absolute;
+  transform-origin: bottom center;
+  bottom: 50%;
+  z-index: 2;
+  border-radius: 50% 50% 0 0;
+}
+
+.hands .hrs {
+  height: 100px;
+}
+.hands .mins {
+  width: 7px;
+  height: 150px;
+  transform: rotate(45deg);
+  background: white;
+}
+.hands .secs {
+  width: 5px;
+  height: 165px;
+  transform: rotate(250deg);
+  background-color: red;
+}
